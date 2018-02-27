@@ -13,6 +13,6 @@ RUN apt-get -q update \
 &&  chown -R www-data:www-data /var/www/html \
 &&  cd /var/www/html && wget http://www.jmarshall.com/tools/cgiproxy/releases/cgiproxy.latest.tar.gz && tar zxf cgiproxy.latest.tar.gz \
 &&  chmod +x nph-proxy.cgi ; ./nph-proxy.cgi install-modules ; ./nph-proxy.cgi install \
-&&  apt-get clean ; rm -rf /tmp/* /var/tmp/* ; rm -rf /var/lib/apt/lists/* ; rm -f /etc/dpkg/dpkg.cfg.d/02apt-speedup ; rm /opt/cgiproxy/cgiproxy.latest.tar.gz ;
+&&  apt-get clean ; rm -rf /tmp/* /var/tmp/* ; rm -rf /var/lib/apt/lists/* ; rm -f /etc/dpkg/dpkg.cfg.d/02apt-speedup ; rm /var/www/html/cgiproxy.latest.tar.gz ;
 WORKDIR /var/www/html
 CMD     ["/bin/bash", "-c", "sudo -u www-data ./nph-proxy.cgi start-fcgi"]
