@@ -2,7 +2,6 @@ FROM ubuntu
 MAINTAINER      yakeworld "yakeworld@gmail.com"
 # Make sure we don't get notifications we can't answer during building.
 ENV     DEBIAN_FRONTEND noninteractive
-# Update the system
 RUN apt-get -q update \
 &&  apt-get  -yq  install apache2 libapache2-mod-perl2 locales\
 &&  apt-get -yq install build-essential libcrypt-ssleay-perl libnet-ssleay-perl libcompress-raw-lzma-perl libio-compress-lzma-perl wget libyaml-perl libconfig-yaml-perl fcgiwrap spawn-fcgi libfcgi-perl  libfcgi-procmanager-perl perl-modules libnet-ssleay-perl libcrypt-ssleay-perl liburi-perl libjson-perl libjavascript-minifier-xs-perl libperlio-gzip-perl libmodule-install-perl libmodule-build-perl liblocal-lib-perl libjson-pp-perl libcpan-meta-perl libdbd-sqlite3 libdbd-sqlite3-perl libcurl4-nss-dev get-flash-videos vim mariadb-server mariadb-client libdbd-mysql-perl \
