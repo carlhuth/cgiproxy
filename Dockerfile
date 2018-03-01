@@ -11,7 +11,7 @@ RUN apt-get -q update \
 &&  wget https://raw.githubusercontent.com/yakeworld/cgiproxy/master/apache2.conf -O /etc/apache2/apache2.conf \
 &&  wget https://raw.githubusercontent.com/yakeworld/cgiproxy/master/readme.pl -O /var/www/perl/readme.pl \
 &&  chmod a+x /var/www/perl/readme.pl \
-#&&  service apache2 restart \
+&&  service apache2 start \
 &&  locale-gen en_US en_US.UTF-8 \
 &&  apt-get clean ; rm -rf /tmp/* /var/tmp/* ; rm -rf /var/lib/apt/lists/* ; rm -f /etc/dpkg/dpkg.cfg.d/02apt-speedup  \
 &&  cd /var/www/html \
