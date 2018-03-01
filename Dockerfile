@@ -13,8 +13,8 @@ RUN apt-get -q update \
 &&  service apache2 restart \
 &&  locale-gen en_US en_US.UTF-8 \
 &&  apt-get clean ; rm -rf /tmp/* /var/tmp/* ; rm -rf /var/lib/apt/lists/* ; rm -f /etc/dpkg/dpkg.cfg.d/02apt-speedup ; \
-&&  cd /var/www/html && wget http://www.jmarshall.com/tools/cgiproxy/releases/cgiproxy.latest.tar.gz && tar zxf cgiproxy.latest.tar.gz \
-&&  chmod a+x nph-proxy.cgi ; ./nph-proxy.cgi install-modules ; ./nph-proxy.cgi install \
+&&  cd /var/www/html; && wget http://www.jmarshall.com/tools/cgiproxy/releases/cgiproxy.latest.tar.gz && tar zxf cgiproxy.latest.tar.gz \
+&&  chmod a+x nph-proxy.cgi ; ./nph-proxy.cgi install-modules ; \
 &&  rm /var/www/html/cgiproxy.latest.tar.gz
 #WORKDIR /var/www/html
 #CMD     ["/bin/bash", "-c", "sudo -u www-data ./nph-proxy.cgi start-fcgi"]
