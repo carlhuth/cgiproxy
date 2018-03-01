@@ -26,14 +26,6 @@ RUN apt-get -q update \
 &&  chmod a+x nph-proxy.cgi ; ./nph-proxy.cgi install-modules  \
 &&  rm /var/www/html/cgiproxy.latest.tar.gz
 
-sed -i 's/^ServerSignature/#ServerSignature/g' /etc/apache2/conf-enabled/security.conf; \
-    sed -i 's/^ServerTokens/#ServerTokens/g' /etc/apache2/conf-enabled/security.conf; \
-    echo "ServerSignature Off" >> /etc/apache2/conf-enabled/security.conf; \
-    echo "ServerTokens Prod" >> /etc/apache2/conf-enabled/security.conf; \
-    a2enmod ssl; \
-    a2enmod headers; \
-    echo "SSLProtocol ALL -SSLv2 -SSLv3" >> /etc/apache2/apache2.conf
-    
     
 #WORKDIR /var/www/html
 #CMD     ["/bin/bash", "-c", "sudo -u www-data ./nph-proxy.cgi start-fcgi"]
