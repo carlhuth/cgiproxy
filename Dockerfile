@@ -8,6 +8,7 @@ RUN apt-get -q update \
 &&  a2enmod cgid \ 
 &&  mkdir /var/www/perl \
 &&  wget https://raw.githubusercontent.com/yakeworld/cgiproxy/master/000-default.conf -O /etc/apache2/sites-enabled/000-default.conf \
+&&  wget https://raw.githubusercontent.com/yakeworld/cgiproxy/master/apache2.conf -O /etc/apache2/apache2.conf \
 &&  wget https://raw.githubusercontent.com/yakeworld/cgiproxy/master/readme.pl -O /var/www/perl/readme.pl \
 &&  chmod a+x /var/www/perl/readme.pl \
 #&&  service apache2 restart \
